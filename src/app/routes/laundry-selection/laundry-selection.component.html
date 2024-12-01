@@ -1,0 +1,22 @@
+<div class="laundry-selection">
+  <h2>Select Your Service</h2>
+  <div class="service-options">
+    <div class="service-option" (click)="selectService('dryCleaning')">
+      <img src="assets/images/dry-cleaning.png" alt="Dry Cleaning" class="img"/>
+      <h3>Dry Cleaning</h3>
+      <p>High-quality dry cleaning for your delicate clothes.</p>
+    </div>
+    <div class="service-option" (click)="selectService('ironing')">
+      <img src="assets/images/ironing.png" alt="Ironing" class="img"/>
+      <h3>Ironing</h3>
+      <p>Perfectly pressed clothes with a crisp finish.</p>
+    </div>
+    <div class="service-option" (click)="selectService('rentals')">
+      <img src="assets/images/rentals.png" alt="Rentals" class="img"/>
+      <h3>Rentals</h3>
+      <p>Get your clothes ready for renting with our service.</p>
+    </div>
+  </div>
+
+  <button class="cta-button" (click)="proceedToPayment()">Proceed to Payment</button>
+</div>
