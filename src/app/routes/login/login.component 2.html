@@ -1,0 +1,17 @@
+<div class="modal" *ngIf="showLoginModal" (click)="closeLoginModal()">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <h2>Login</h2>
+    <form (ngSubmit)="login()">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required />
+      </div>
+      <button type="submit" class="login-button">Login</button>
+    </form>
+    <button class="close-button" (click)="closeLoginModal()">Close</button>
+  </div>
+</div>
