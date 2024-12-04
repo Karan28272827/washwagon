@@ -1,0 +1,34 @@
+<nav class="navbar">
+  <div class="navbar-container">
+    <!-- Brand Logo -->
+    <div class="brand" (click)="navigateToHome()">
+      <img src="assets/logo.png" alt="WashWagon Logo" class="brand-logo" />
+      <span class="brand-name">WashWagon</span>
+    </div>
+
+    <!-- Hamburger Menu for Mobile -->
+    <button class="hamburger">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+
+    <!-- Navigation Links -->
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Pricing</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+      <li></li>
+      <li>
+        <button class="cta-button" (click)="openLogin()">Login</button>
+        <button class="cta-button" (click)="openSignUp()">Sign Up</button>
+      </li>
+
+    </ul>
+  </div>
+</nav>
+
+<app-login></app-login>
+

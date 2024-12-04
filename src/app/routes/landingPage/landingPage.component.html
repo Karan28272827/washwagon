@@ -1,4 +1,57 @@
-<div class="landing-page-container">
-    <div class="h1">This to landing page!</div>
-    <img src="...assets/images/landingpage.jpeg" alt="Landing Page Image" class="img">
+<div class="landing-page">
+  <!-- Background Video Section -->
+  <div class="video-container">
+    <video autoplay loop muted class="background-video">
+      <source src="assets/laundry-bg-video.mp4" type="video/mp4" />
+    </video>
+    <div class="overlay"></div>
+  </div>
+
+  <!-- Main Content Section -->
+  <div class="main-content">
+    <div class="cta-container">
+      <h1>Your Laundry, Delivered</h1>
+      <p>Quick, reliable, and affordable laundry delivery at your doorstep.</p>
+      <button class="cta-button" routerLink="/sign-up">Order Now </button>
+    </div>
+  </div>
+
+  <!-- Features Section -->
+  <div class="features">
+    <div class="feature">
+      <img src="assets/images/landingpage.png" alt="Fast Pickup" class="img" />
+      <h3>Fast Pickup</h3>
+      <p>We pick up your laundry at your convenience with lightning speed.</p>
+    </div>
+    <div class="feature">
+      <img src="assets/images/feature2.png" alt="Clean & Fresh" class="img" />
+      <h3>Clean & Fresh</h3>
+      <p>Your laundry is cleaned and returned to you in perfect condition.</p>
+    </div>
+    <div class="feature">
+      <img src="assets/images/feature3.png" alt="Affordable Prices" class="img" />
+      <h3>Affordable Prices</h3>
+      <p>Get the best laundry service at the most competitive prices.</p>
+    </div>
+  </div>
+
+  <!-- Testimonials Section -->
+  <div class="testimonials">
+    <h2>What Our Customers Say</h2>
+    <div class="testimonial">
+      <p>"The service was excellent, my clothes came back fresh and clean!"</p>
+      <span>- John Doe</span>
+    </div>
+    <div class="testimonial">
+      <p>"Quick pickup and delivery. Highly recommend!"</p>
+      <span>- Jane Smith</span>
+    </div>
+  </div>
+
+  <!-- Call to Action Section -->
+  <div class="cta-final">
+    <h2>Ready to get started?</h2>
+    <p>Sign up now and get your laundry done in no time.</p>
+    <button class="cta-button" routerLink="/sign-up">Sign Up Now</button>
+  </div>
 </div>

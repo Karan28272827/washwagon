@@ -1,23 +1,8 @@
-html, body {
-  height: 100%;
-  margin: 0;
-}
-
-#root, app-root {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh; /* Full viewport height */
-}
-
-main {
-  flex: 1; /* Grow to fill available space */
-}
-
 .footer {
   background-color: #212529;
   color: #f8f9fa;
-  padding: 2rem 1rem;
-  margin-top: auto; /* Push the footer to the bottom */
+  padding: 3rem 1rem;
+  margin-top: auto; // Ensure footer moves to the bottom when content is short
 
   .footer-container {
     display: flex;
@@ -26,17 +11,20 @@ main {
     align-items: flex-start;
     max-width: 1200px;
     margin: 0 auto;
+    width: 100%; // Ensure full width
 
     .logo {
       h2 {
         font-size: 2rem;
+        font-weight: bold;
+
         span {
           color: #17a2b8;
         }
       }
       p {
         margin-top: 0.5rem;
-        font-size: 0.9rem;
+        font-size: 1rem;
         color: #ced4da;
       }
     }
@@ -48,12 +36,14 @@ main {
         margin-bottom: 1rem;
         color: #f8f9fa;
       }
+
       ul {
         list-style: none;
         padding: 0;
 
         li {
           margin-bottom: 0.5rem;
+
           a {
             text-decoration: none;
             color: #adb5bd;
@@ -94,7 +84,7 @@ main {
 
   .footer-bottom {
     text-align: center;
-    padding: 1rem 0;
+    padding: 1.2rem 0;
     border-top: 1px solid #343a40;
     margin-top: 2rem;
 
