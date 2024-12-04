@@ -17,6 +17,13 @@
       margin: 0 20px;
       text-align: center;
       cursor: pointer;
+      position: relative; // Needed for checkmark positioning
+      border: 2px solid transparent; // Default border
+      transition: border-color 0.3s ease;
+
+      &.selected {
+        border-color: #ff5c5c; // Highlight border when selected
+      }
 
       .img {
         max-width: 100%;
@@ -32,6 +39,14 @@
       p {
         font-size: 1rem;
         color: #555;
+      }
+
+      .checkmark {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 20px;
+        height: 20px;
       }
     }
   }

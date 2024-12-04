@@ -22,4 +22,10 @@ export class NavbarComponent {
     // Navigate to the sign-up page
     this.router.navigate(['/sign-up']);
   }
+
+
+  navigateToHome() {
+    // Navigate to the home page
+    this.router.navigate(['/']);
+  }
 }
