@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-laundry-selection',
+  selector: 'ww-laundry-selection',
   templateUrl: './laundry-selection.component.html',
   styleUrls: ['./laundry-selection.component.scss']
 })

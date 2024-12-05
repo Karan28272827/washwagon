@@ -15,6 +15,14 @@
       <small>Email is required and must be valid.</small>
     </div>
 
+    <!-- Phone Input -->
+    <label for="phone">Phone Number:</label>
+    <input type="text" id="phone" formControlName="phone" required />
+    <div *ngIf="signUpForm.get('phone')?.invalid && signUpForm.get('phone')?.touched">
+      <small *ngIf="signUpForm.get('phone')?.errors?.['required']">Phone number is required.</small>
+      <small *ngIf="signUpForm.get('phone')?.errors?.['pattern']">Phone number must be 10 digits long.</small>
+    </div>
+
     <!-- Password Input -->
     <label for="password">Password:</label>
     <input type="password" id="password" formControlName="password" required />
@@ -25,4 +33,7 @@
     <!-- Submit Button -->
     <button type="submit" class="cta-button" [disabled]="signUpForm.invalid">Sign Up Now</button>
   </form>
+
+  <!-- Display Error or Success Message -->
+  <div *ngIf="message" class="message">{{ message }}</div>
 </div>

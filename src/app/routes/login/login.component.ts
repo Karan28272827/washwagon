@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { NgIf } from '@angular/common'; // Import NgIf
 
 @Component({
-  selector: 'app-login',
+  selector: 'ww-login',
   standalone: true,
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
-  imports: [NgIf], 
+  imports: [NgIf],
 })
 export class LoginComponent {
   showLoginModal = false;

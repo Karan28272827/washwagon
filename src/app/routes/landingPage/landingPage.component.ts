@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-landing-page',
+  selector: 'ww-landing-page',
   standalone: true,
   imports: [],
   templateUrl: './landingPage.component.html',
