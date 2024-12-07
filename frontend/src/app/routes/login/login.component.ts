@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { NgIf } from '@angular/common'; // Import NgIf
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'ww-login',
   standalone: true,
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
-  imports: [NgIf],
+  imports: [CommonModule],
 })
 export class LoginComponent {
   showLoginModal = false;
