@@ -1,0 +1,56 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensure full viewport height */
+}
+
+main {
+  flex: 1; /* Expands the main content to push the footer down */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+
+  .left-side {
+    margin-bottom: 1rem;
+
+    .angular-logo {
+      width: 100px;
+      height: auto;
+    }
+  }
+
+  .divider {
+    height: 1px;
+    width: 100%;
+    background-color: #ccc;
+    margin: 1rem 0;
+  }
+
+  .pill-group {
+    display: flex;
+    gap: 1rem;
+
+    .pill {
+      padding: 0.5rem 1rem;
+      background-color: #007bff;
+      color: #fff;
+      border-radius: 20px;
+      text-decoration: none;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: #0056b3;
+      }
+    }
+  }
+}
