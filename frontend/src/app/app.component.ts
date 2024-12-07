@@ -5,11 +5,12 @@ import { NavbarComponent } from './routes/navbar/navbar.component';
 import { DatabaseService } from './routes/database.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';  // Import both FormsModule and ReactiveFormsModule
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'; // FormBuilder and Validators
+import { OrdersComponent } from './routes/orders/orders.component';
 
 @Component({
   selector: 'ww-root',
   standalone: true,
-  imports: [RouterOutlet, FooterComponent, NavbarComponent, FormsModule, ReactiveFormsModule],  // Add ReactiveFormsModule here
+  imports: [RouterOutlet, FooterComponent, NavbarComponent, FormsModule, ReactiveFormsModule, OrdersComponent],  // Add ReactiveFormsModule here
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
