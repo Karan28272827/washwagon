@@ -11,11 +11,11 @@ const paymentSchema = new mongoose.Schema({
   },
   currency: {
     type: String,
-    default: 'inr',
+    default: 'USD',
   },
   paymentStatus: {
     type: String,
-    default: 'Pendin',
+    default: 'Pending',
   },
   createdAt: {
     type: Date,

@@ -14,6 +14,7 @@ export class PaymentPageComponent {
 
   processPayment() {
     // Payment processing logic
+    
     console.log('Initiating payment...');
 
     const paymentData = {
