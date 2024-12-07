@@ -7,24 +7,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./payment-page.component.scss']
 })
 export class PaymentPageComponent {
-
-  // Replace with your actual API endpoint and key
-  private apiUrl = 'https://api.paymentgateway.com/process';
-  private apiKey = 'your-api-key-here';
+  private apiUrl = 'http://localhost:3000/api/payments/process'; // Correct API URL
 
   processPayment() {
-    // Payment processing logic
-    
     console.log('Initiating payment...');
 
     const paymentData = {
-      orderId: 123456,
-      amount: 50.00,
+      orderId: 123456, // Replace with dynamic order ID
+      amount: 50.0, // Replace with dynamic amount
       currency: 'USD',
-      apiKey: this.apiKey,
     };
 
-    // Mock example to call the payment API (to be replaced with actual service)
     fetch(this.apiUrl, {
       method: 'POST',
       headers: {
@@ -32,7 +25,12 @@ export class PaymentPageComponent {
       },
       body: JSON.stringify(paymentData),
     })
-      .then((response) => response.json())
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+      })
       .then((data) => {
         console.log('Payment successful:', data);
         alert('Payment processed successfully!');

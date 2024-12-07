@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class DatabaseService {
-  private baseUrl = 'http://localhost:3000/api/create-customer'; // Base API URL
+  private baseUrl = 'http://localhost:3000/api'; // Base API URL
 
   constructor(private http: HttpClient) {}
 
@@ -16,7 +16,7 @@ export class DatabaseService {
    * @returns Observable of the HTTP response.
    */
   createCustomer(customerData: any): Observable<any> {
-    return this.http.post(this.baseUrl, customerData); // No need for `/create-customer` here
+    return this.http.post(`${this.baseUrl}/create-customer`, customerData);
   }
 
   /**
@@ -25,8 +25,16 @@ export class DatabaseService {
    * @returns Observable of the HTTP response.
    */
   createCollection(collectionName: string): Observable<any> {
-    const endpoint = `${this.baseUrl}`;
     const collectionData = { name: collectionName };
-    return this.http.post(endpoint, collectionData);
+    return this.http.post(`${this.baseUrl}/create-collection`, collectionData);
+  }
+
+  /**
+   * Method to process payment.
+   * @param paymentData - Data for the payment to be processed.
+   * @returns Observable of the HTTP response.
+   */
+  processPayment(paymentData: any): Observable<any> {
+    return this.http.post(`${this.baseUrl}/payments/process`, paymentData);
   }
 }

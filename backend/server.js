@@ -8,7 +8,11 @@ const paymentRoutes = require('./routes/payment.routes'); // Import payment rout
 const app = express();
 
 // Enable CORS
-app.use(cors());
+app.use(cors({
+  origin: 'http://localhost:4200', // Angular's default development port
+  methods: 'GET,POST,PUT,DELETE',
+  allowedHeaders: 'Content-Type',
+}));
 
 // Middleware to parse JSON bodies
 app.use(bodyParser.json());
