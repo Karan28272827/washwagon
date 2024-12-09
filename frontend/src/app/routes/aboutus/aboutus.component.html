@@ -1,0 +1,24 @@
+<div class="page-wrapper">
+  <!-- About Us Section -->
+  <div class="about-us-container">
+    <h1 class="page-title">About Us</h1>
+    <p class="description">
+      Welcome to WashWagon! We are dedicated to providing the best laundry services to meet all your needs.
+    </p>
+    <div class="team">
+      <h2 class="team-title">Meet Our Team</h2>
+      <div class="team-grid">
+        <div *ngFor="let member of teamMembers" class="team-member">
+          <div class="member-content">
+            <div class="member-avatar">
+              <span>{{ member.name[0] }}</span>
+            </div>
+            <h3 class="member-name">{{ member.name }}</h3>
+            <p class="member-role">{{ member.role }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
