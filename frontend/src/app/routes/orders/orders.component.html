@@ -1,2 +1,73 @@
-<p>orders works!</p>
-<!-- <ww-navbar></ww-navbar> -->
+  <p>orders works!</p>
+  <!-- orders.component.html -->
+    <!-- Filter Sidebar -->
+  <div class="filters-container">
+    <h2>Filters</h2>
+    <!-- Filter options (you can replace this with your actual filter controls) -->
+    <div class="filter-option">
+      <label for="category">Category</label>
+      <select id="category" name="category">
+        <option value="all">All</option>
+        <option value="food">Food</option>
+        <option value="electronics">Electronics</option>
+        <option value="clothing">Clothing</option>
+      </select>
+    </div>
+    <div class="filter-option">
+      <label for="price-range">Price Range</label>
+      <input type="range" id="price-range" name="price" min="0" max="1000" />
+    </div>
+    <!-- Add more filter options here -->
+  </div>
+
+  
+  <div class="orders-page">
+    <!-- <div> -->
+        <!-- Image 1 -->
+        <!-- <img src="images/landingpage.png" alt="Image 1" class="order-image" /> -->
+        <!-- </div> -->
+
+    <!-- Header Section -->
+    <header class="header">
+      <h1 class="page-title">Available Orders</h1>
+      <input type="text" placeholder="Search orders..." class="search-input" />
+    </header>
+  
+    <div class="orders-grid">
+      <div class="order-card" *ngFor="let order of orders">
+        <img src="{{ order.image }}" alt="Order Image" class="order-image" />
+        <div class="order-details">
+          <h2 class="order-title">{{ order.title }}</h2>
+          <p class="order-description">{{ order.description }}</p>
+
+            <!-- Counter Buttons -->
+            <div class="button-container">
+              <!-- Plus Button -->
+              <button (click)="increase(order)">+</button>
+            
+              <!-- Counter Display -->
+              <span class="counter">{{ order.count }}</span>
+            
+              <!-- Minus Button -->
+              <button (click)="decrease(order)">-</button>
+            </div>
+
+          <!-- View Details Button -->
+          <button class="order-button" (click)="handleOrderClick(order.id)">View Details</button>
+        </div>
+      </div>
+    </div>
+    
+      <!-- Button Container -->
+      <div class="button-container">
+        <!-- Plus Button -->
+        <button (click)="increase()">+</button>
+
+        <span class="counter">{{counter}}</span>
+
+        <!-- Minus Button -->
+        <button (click)="decrease()">-</button>
+      </div>
+    </div>
+    
+  <!-- <ww-navbar></ww-navbar> -->

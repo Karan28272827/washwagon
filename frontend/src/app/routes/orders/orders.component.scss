@@ -1,0 +1,191 @@
+/* General page styling */
+.orders-page {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  max-width: 1200px;  /* Maximum width of the page */
+  margin: 0 auto;
+}
+
+/* orders.component.scss */
+.orders-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px; /* Space between buttons and counter */
+  margin-bottom: 10px; /* Space below the counter buttons */
+  }
+  
+  .image-container {
+    display: flex;
+    gap: 10px; /* Space between images */
+  }
+  
+  .order-image {
+    width: 800px; /* Adjust size as needed */
+    height: 500px;
+    border-radius: 8px; /* Optional for rounded corners */
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Space between buttons */
+  }
+/* Counter Button Container */
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px; /* Space between buttons and counter */
+  margin-bottom: 10px; /* Add spacing below the counter buttons */
+}
+
+/* Individual Buttons */
+.button-container button {
+  padding: 8px 12px;
+  font-size: 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+  /* Counter Display */
+.button-container .counter {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+  button {
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+
+/* Orders Grid */
+.orders-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Grid layout with responsive column sizing */
+  gap: 20px; /* Spacing between cards */
+  width: 100%; /* Make the grid take up the full available width */
+  margin: 0 auto; /* Center align the grid */
+  padding: 0 10px; /* Add some padding to prevent touching the screen edges */
+  display: block; /* Force the grid to stack cards vertically */
+
+}
+
+/* Order Card Styling */
+.order-card {
+  display: flex;
+  margin-bottom: 20px; /* Space between cards */
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.order-card:hover {
+  transform: translateY(-5px); /* Hover effect */
+}
+
+.order-image {
+  width: 25%; /* Image covers 25% of the card */
+  height: 200px;
+  object-fit: cover; /* Ensure the image covers the entire space */}
+
+
+/* Order Details Section (right side) */
+.order-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 15px;
+  width: 75%; /* Takes up the remaining space */
+  position: relative; /* Enable positioning of the button */
+}
+
+.order-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.order-description {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+/* View Details Button */
+.order-button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  align-self: flex-start; /* Align the button to the start of the flex container */
+}
+
+.order-button:hover {
+  background-color: #45a049;
+}
+
+/* Counter Container */
+.counter-container {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between buttons and counter */
+  margin-bottom: 10px; /* Space above the View Details button */
+}
+
+.counter-button {
+  padding: 5px 10px;
+  font-size: 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.counter-button:hover {
+  background-color: #0056b3;
+}
+
+.counter {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+
+/* Ensure the grid is responsive on smaller screens */
+@media (max-width: 768px) {
+  .order-card {
+    flex-direction: column; /* Stack the image and details vertically */
+  }
+
+  .order-image {
+    width: 100%; /* Image takes up full width on smaller screens */
+    height: auto; /* Adjust the height based on image aspect ratio */
+  }
+
+  .order-details {
+    width: 100%; /* Order details take up full width */
+    padding: 10px;
+    position: relative; /* Re-enable positioning for smaller screens */
+  }
+  .order-button {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+  }
+}

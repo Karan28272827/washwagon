@@ -11,7 +11,7 @@ export const routes: Routes = [
   { path: 'sign-up', component: SignUpComponent },               // Path for Sign-Up Page
   { path: 'laundry-selection', component: LaundrySelectionComponent },  // Path for Laundry Service Selection
   { path: 'payment', component: PaymentPageComponent },         // Path for Payment Page (Under Construction)
-  { path: 'orders', component: OrdersComponent },         // Path for Payment Page (Under Construction)
+  { path: 'orders', component: OrdersComponent },         // Services List Page (Under Construction)
   // Add any other routes for your application here
 ];
 
