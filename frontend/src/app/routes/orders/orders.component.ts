@@ -50,8 +50,8 @@ orders = [
   }
 ];
 
- // Method to increase the counter for a specific order
- increase(order: any) {
+// Method to increase the counter for a specific order
+increase(order: any) {
   order.count++;
   console.log("Increase clicked for order:", order.id);
 }

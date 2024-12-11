@@ -4,6 +4,17 @@
   padding: 20px;
   max-width: 1200px;  /* Maximum width of the page */
   margin: 0 auto;
+  padding-left: 320px; /* Add space to the left for the sidebar */
+
+}
+
+/* Header Styling */
+.header {
+  display: flex;
+  justify-content: space-between; /* Space between title and search bar */
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 20px; /* Space between header and order grid */
 }
 
 /* orders.component.scss */
@@ -33,11 +44,15 @@
   }
 /* Counter Button Container */
 .button-container {
+  position: absolute;      /* Position it absolutely within the parent (order card) */
+  top: 50%;                 /* Place it vertically at the center of the order card */
+  right: 10px;             /* Adjust the distance from the right side */
+  transform: translateY(-50%); /* Center the container vertically */
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px; /* Space between buttons and counter */
-  margin-bottom: 10px; /* Add spacing below the counter buttons */
+  gap: 10px;               /* Space between buttons and counter */
+  margin-bottom: 10px;     /* Add spacing below the counter buttons */
 }
 
 /* Individual Buttons */
@@ -90,6 +105,7 @@
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease-in-out;
+  position: relative;      /* Make this the reference point for absolute positioning */
 }
 
 .order-card:hover {
@@ -126,14 +142,15 @@
 
 /* View Details Button */
 .order-button {
+  position: absolute;    /* Make the position absolute within the parent (.order-card) */
+  bottom: 10px;          /* Distance from the bottom of the parent */
+  right: 10px;           /* Distance from the right of the parent */
   background-color: #4caf50;
   color: white;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
-  cursor: pointer;
-  align-self: flex-start; /* Align the button to the start of the flex container */
-}
+  cursor: pointer;}
 
 .order-button:hover {
   background-color: #45a049;
@@ -166,6 +183,94 @@
   font-weight: bold;
 }
 
+/* Filter Sidebar Styling */
+.filters-container {
+  width: 300px; /* Set a fixed width for the sidebar */
+  padding: 20px;
+  background-color: #f4f4f4; /* Light gray background for the sidebar */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+  position: fixed; /* Fix to the side of the page */
+  top: 80px; /* Adjusted to start below the header (assuming header height is ~80px) */
+  left: 20px; /* Align to the left */
+  height: calc(100vh - 100px); /* Full height minus top padding and header height */
+  overflow-y: auto; /* Allow scrolling if content exceeds container height */
+}
+
+/* Heading inside the filter sidebar */
+.filters-container h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px; /* Space between heading and filter options */
+}
+
+/* Styling for each filter option */
+.filter-option {
+  margin-bottom: 15px; /* Space between filter options */
+}
+
+/* Styling for filter labels */
+.filter-option label {
+  font-size: 1rem;
+  display: block;
+  margin-bottom: 5px; /* Space between label and input element */
+}
+
+/* Styling for select input */
+.filter-option select, .filter-option input[type="range"] {
+  width: 100%; /* Make input elements fill the container width */
+  padding: 8px;
+  font-size: 1rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  box-sizing: border-box; /* Include padding in width calculation */
+}
+
+/* Filter Sidebar Styling */
+.filters-container {
+  width: 300px; /* Fixed width for the sidebar */
+  padding: 20px;
+  background-color: #f4f4f4; /* Light gray background */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow effect */
+  position: fixed; /* Fix to the side of the page */
+  top: 100px; /* Start below the header (adjust header height if needed) */
+  left: 20px; /* Position from the left */
+  height: calc(100vh - 250px); /* Full height minus top padding and header + footer space */
+  overflow-y: auto; /* Allow scrolling inside the sidebar */
+  z-index: 10; /* Ensure the sidebar appears above other content */
+}
+
+
+/* Heading inside the filter sidebar */
+.filters-container h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px; /* Space between heading and filter options */
+}
+
+/* Styling for each filter option */
+.filter-option {
+  margin-bottom: 15px; /* Space between filter options */
+}
+
+/* Styling for filter labels */
+.filter-option label {
+  font-size: 1rem;
+  display: block;
+  margin-bottom: 5px; /* Space between label and input element */
+}
+
+/* Styling for select input */
+.filter-option select, .filter-option input[type="range"] {
+  width: 100%; /* Make input elements fill the container width */
+  padding: 8px;
+  font-size: 1rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  box-sizing: border-box; /* Include padding in width calculation */
+}
+
+/* Optional: Add more styles for other filter controls here */
+
 
 /* Ensure the grid is responsive on smaller screens */
 @media (max-width: 768px) {
@@ -187,5 +292,17 @@
     position: absolute;
     bottom: 10px;
     right: 10px;
+  }
+  .filters-container {
+    width: 100%; /* Full width on small screens */
+    top: 0; /* Align sidebar to the top */
+    left: 0;
+    right: 0; /* Full width sidebar */
+    height: auto; /* Adjust height */
+    padding: 15px;
+  }
+
+  .orders-page {
+    padding-left: 0; /* Reset padding on smaller screens */
   }
 }
