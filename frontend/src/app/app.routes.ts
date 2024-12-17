@@ -5,13 +5,16 @@ import { SignUpComponent } from './routes/sign-up/sign-up.component';  // Import
 import { LaundrySelectionComponent } from './routes/laundry-selection/laundry-selection.component'; // Import LaundrySelectionComponent
 import { PaymentPageComponent } from './routes/payment-page/payment-page.component'; // Import PaymentPageComponent
 import { OrdersComponent } from './routes/orders/orders.component';
+import { PopupComponent } from './routes/popup/popup.component';
 
 export const routes: Routes = [
   { path: '', component: LandingPageComponent },                // Root path showing the Landing Page
   { path: 'sign-up', component: SignUpComponent },               // Path for Sign-Up Page
   { path: 'laundry-selection', component: LaundrySelectionComponent },  // Path for Laundry Service Selection
   { path: 'payment', component: PaymentPageComponent },         // Path for Payment Page (Under Construction)
-  { path: 'orders', component: OrdersComponent },         // Services List Page (Under Construction)
+  { path: 'orders', component: OrdersComponent }, 
+  { path: 'popup', component: PopupComponent }, 
+  
   // Add any other routes for your application here
 ];
 

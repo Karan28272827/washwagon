@@ -1,1 +1,16 @@
-<p>popup works!</p>
+<div class="modal-backdrop">
+  <div class="modal-content">
+    <h2>Item Added to Cart</h2>
+    
+    <div style="text-align: center; margin: 10px 0;">
+      Pls enter specifications, If any:
+    </div>
+
+     <!-- Center the textarea -->
+     <div style="width: 300px; margin: 10px 0;">
+      <textarea rows="4" cols="30" style="resize: none; width: 100%;"></textarea>
+    </div>
+
+    <button (click)="onCloseAndRedirect()">Add</button>
+  </div>
+</div>

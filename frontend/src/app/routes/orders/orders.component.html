@@ -3,7 +3,7 @@
   <!-- orders.component.html -->
     <!-- Filter Sidebar -->
 <!-- Filter Sidebar -->
-<div class="filters-container">
+<div class="filters">
   <h2>Filters</h2>
   <!-- Filter options (you can replace this with your actual filter controls) -->
   <div class="filter-option">
@@ -55,9 +55,10 @@
             </div>
 
           <!-- View Details Button -->
-          <button class="order-button" (click)="handleOrderClick(order.id)">View Details</button>
+          <button class="order-button" (click)="addToCart()">Add To Cart</button>
         </div>
       </div>
+      <ng-container #popupContainer></ng-container>
     </div>
     
   <!-- <ww-navbar></ww-navbar> -->

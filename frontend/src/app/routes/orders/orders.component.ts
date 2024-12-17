@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ViewContainerRef,  } from '@angular/core';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { CommonModule } from '@angular/common'; // Import CommonModule
+import { PopupComponent } from '../popup/popup.component';
+
 
 @Component({
   selector: 'ww-orders',
@@ -11,6 +13,8 @@ import { CommonModule } from '@angular/common'; // Import CommonModule
 })
 export class OrdersComponent {
 
+  @ViewChild('popupContainer', { read: ViewContainerRef, static: true }) 
+  popupContainer!: ViewContainerRef;
 // counter: number = 0;//initializinf the counbter
 
 //  // Logic for handling button clicks (if needed)
@@ -63,8 +67,17 @@ decrease(order: any) {
   }
 }
 
-handleOrderClick(id: number) {
-  console.log('Order clicked:', id);
-}
+// Method to open the modal when "Add To Cart" is clicked
+addToCart() {
+  // Clear any existing popup before adding a new one
+  this.popupContainer.clear();
 
+  // Create and attach the PopupComponent dynamically
+  const componentRef = this.popupContainer.createComponent(PopupComponent);
+
+  // Cleanup when the modal is closed
+  componentRef.instance.close.subscribe(() => {
+    componentRef.destroy();
+  });
+}
 }
