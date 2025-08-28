@@ -2,6 +2,8 @@ import React from 'react';
 // import Bookings from './pages/bookings';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import Hero from './components/Hero';
+import Services from './components/Services';
 
 // function App() {
 //   return (
@@ -16,8 +18,9 @@ function App() {
     <div style={appStyle}>
       <Header />
       <main style={mainStyle}>
-        <h2>Welcome to Laundry Booking</h2>
-        <p>Your simple and efficient laundry service management app.</p>
+        <Hero />
+        <Services />
+        {/* Other containers will go here below the hero */}
       </main>
       <Footer />
     </div>
@@ -34,10 +37,8 @@ const appStyle = {
 
 const mainStyle = {
   flex: 1,
-  maxWidth: '800px',
-  margin: '2rem auto',
-  padding: '0 1rem',
-  textAlign: 'center',
+  width: '100%',
+  margin: '0 auto',
 };
 
 export default App;
