@@ -4,11 +4,17 @@ const Header = () => {
   return (
     <header style={headerStyle}>
       <div style={containerStyle}>
-        <h1 style={{ margin: 0 }}>Laundry Booking</h1>
-        <nav>
-          <a href="#features" style={linkStyle}>Features</a>
-          <a href="#pricing" style={linkStyle}>Pricing</a>
-          <a href="#contact" style={linkStyle}>Contact</a>
+        <div style={leftSectionStyle}>
+          <div style={logoStyle}>Laundry</div>
+          <nav style={navStyle}>
+            <a href="#services" style={linkStyle}>Services</a>
+            <a href="#pricing" style={linkStyle}>Pricing</a>
+            <a href="#about" style={linkStyle}>About Us</a>
+          </nav>
+        </div>
+        <nav style={rightNavStyle}>
+          <a href="#login" style={linkStyle}>Log In</a>
+          <a href="#contact" style={linkStyle}>Contact Us</a>
         </nav>
       </div>
     </header>
@@ -16,22 +22,42 @@ const Header = () => {
 };
 
 const headerStyle = {
-  backgroundColor: '#282c34',
+  backgroundColor: '#474c56ff',
   padding: '1rem 0',
   color: 'white',
-  boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
+  boxShadow: '0 2px 4px rgba(87, 82, 82, 0.1)',
   position: 'sticky',
   top: 0,
   zIndex: 100,
 };
 
 const containerStyle = {
+  width: '100%',
+  maxWidth: '1600px',
+  margin: '0 1rem',
+  padding: '0 1rem',
+  display: 'flex',
+  justifyContent: 'space-between',
+  alignItems: 'center',
+};
+
+const leftSectionStyle = {
   display: 'flex',
   alignItems: 'center',
-  justifyContent: 'space-between',
-  maxWidth: '1200px',
-  margin: '0 auto',
-  padding: '0 1rem',
+};
+
+const logoStyle = {
+  fontWeight: '700',
+  fontSize: '2rem',
+  marginRight: '2rem',
+};
+
+const navStyle = {
+  display: 'flex',
+};
+
+const rightNavStyle = {
+  display: 'flex',
 };
 
 const linkStyle = {
