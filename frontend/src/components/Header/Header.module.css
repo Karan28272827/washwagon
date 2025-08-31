@@ -9,7 +9,6 @@
 }
 
 .container {
-  width: 100%;
   max-width: 1600px;
   padding: 0 1rem;
   display: flex;
@@ -41,4 +40,71 @@
   margin-left: 1.5rem;
   text-decoration: none;
   font-weight: 500;
+}
+
+/* Responsive styles */
+
+/* Extra small devices (phones, less than 600px) */
+@media (max-width: 599px) {
+  .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .leftSection {
+    margin-bottom: 10px;
+  }
+
+  .nav, .rightNav {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .nav a, .rightNav a {
+    margin: 5px 0;
+    width: 100%;
+    margin-left: 0;
+    padding: 8px 0;
+  }
+}
+
+/* Small devices (600-767px) */
+@media (min-width: 600px) and (max-width: 767px) {
+  .logo {
+    font-size: 1.8rem;
+  }
+
+  .link {
+    margin-left: 1rem;
+    font-size: 0.95rem;
+  }
+}
+
+/* Medium devices (768-991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .logo {
+    font-size: 1.9rem;
+  }
+
+  .link {
+    margin-left: 1.2rem;
+  }
+}
+
+/* Large devices (992px and up) */
+@media (min-width: 992px) {
+  .container {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .nav, .rightNav {
+    flex-direction: row;
+  }
+
+  .nav a, .rightNav a {
+    width: auto;
+    margin: 0 0 0 1.5rem;
+    padding: 0;
+  }
 }

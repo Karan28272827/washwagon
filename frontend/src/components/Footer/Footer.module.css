@@ -21,3 +21,44 @@
   text-decoration: none;
   font-weight: 500;
 }
+
+/* Responsive styles */
+
+/* Extra small devices (phones, less than 600px) */
+@media (max-width: 599px) {
+  .container {
+    flex-direction: column;
+    text-align: center;
+    padding: 0 10px;
+  }
+
+  .link {
+    margin: 5px 0;
+    display: block;
+  }
+}
+
+/* Small devices (600px to 767px) */
+@media (min-width: 600px) and (max-width: 767px) {
+  .container {
+    justify-content: center;
+    padding: 0 15px;
+  }
+
+  .link {
+    margin: 0 10px;
+  }
+}
+
+/* Medium devices and up (768px and above) */
+@media (min-width: 768px) {
+  .container {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .link {
+    margin: 0 15px;
+    display: inline-block;
+  }
+}

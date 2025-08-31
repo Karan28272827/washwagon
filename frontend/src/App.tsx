@@ -8,7 +8,7 @@ const App: React.FC = () => {
   return (
     <div >
       <Header />
-      <main style={{maxWidth: '1635px'}}>
+      <main style={{width: '100%'}}>
         <Hero />
         <Services />
         {/* Add more sections here */}
