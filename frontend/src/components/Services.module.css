@@ -1,6 +1,5 @@
 .servicesSection {
   padding: 60px 20px;
-  
   margin: 0 auto;
   max-width: 1200px;
 }
@@ -19,14 +18,87 @@
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
+/* Service Card Hover Reveal */
 .serviceCard {
-  background-color: #f9f9f9;
-  border-radius: 12px;
-  padding: 30px 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-  text-align: center;
+  position: relative;
+  background: transparent;
+  box-shadow: none;
+  overflow: visible;
+  cursor: pointer;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 240px;
 }
 
+/* Initial icon-only view */
+.cardIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  background: inherit;
+  margin: 0 auto;
+  transition: opacity 0.3s;
+}
+
+.serviceImage {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  border-radius: 12px;
+  background: transparent;
+  box-shadow: none;
+  transition: transform 0.3s;
+}
+
+/* Hidden expanded content */
+.cardContent {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  background: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.09);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.97);
+  transition: opacity 0.3s, transform 0.3s;
+  padding: 32px 18px;
+}
+
+.serviceImageSmall {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  margin-bottom: 8px;
+  border-radius: 10px;
+  box-shadow: none;
+  background: transparent;
+}
+
+/* Hover reveal effect */
+.serviceCard:hover .cardContent {
+  opacity: 1;
+  pointer-events: auto;
+  transform: scale(1.06);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.09);
+}
+
+.serviceCard:hover .cardIcon {
+  opacity: 0;
+}
+
+/* Service title and description (shown only on hover) */
 .serviceTitle {
   font-size: 1.5rem;
   margin-bottom: 15px;
@@ -40,80 +112,74 @@
 }
 
 /* Responsive Breakpoints */
-
-/* Extra small devices (phones, less than 600px) */
 @media (max-width: 599px) {
   .servicesSection {
     padding: 40px 10px;
   }
-
   .sectionTitle {
     font-size: 1.5rem;
     margin-bottom: 30px;
   }
-  
+  .serviceCard {
+    min-height: 80px;
+  }
+  .cardIcon {
+    width: 56px;
+    height: 56px;
+  }
+  .serviceImage, .serviceImageSmall {
+    width: 48px;
+    height: 48px;
+  }
   .serviceTitle {
     font-size: 1.25rem;
   }
-  
   .serviceDesc {
     font-size: 0.9rem;
   }
 }
 
-/* Small devices (portrait tablets and large phones, 600px and up) */
 @media (min-width: 600px) and (max-width: 767px) {
   .servicesSection {
     padding: 50px 15px;
   }
-
   .sectionTitle {
     font-size: 1.75rem;
     margin-bottom: 35px;
   }
-  
   .serviceTitle {
     font-size: 1.4rem;
   }
-  
   .serviceDesc {
     font-size: 1rem;
   }
 }
 
-/* Medium devices (landscape tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 991px) {
   .servicesSection {
     padding: 55px 20px;
   }
-
   .sectionTitle {
     font-size: 1.85rem;
   }
-  
   .serviceTitle {
     font-size: 1.45rem;
   }
-  
   .serviceDesc {
     font-size: 1rem;
   }
 }
 
-/* Large devices (laptops/desktops, 992px and up) */
 @media (min-width: 992px) {
   .servicesSection {
     padding: 60px 20px;
   }
-
   .sectionTitle {
     font-size: 2rem;
   }
-  
   .serviceTitle {
     font-size: 1.5rem;
   }
-  
   .serviceDesc {
     font-size: 1rem;
   }
