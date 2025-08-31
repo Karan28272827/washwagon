@@ -1,0 +1,44 @@
+.header {
+  background-color: #474c56ff;
+  padding: 1rem 0;
+  color: white;
+  box-shadow: 0 2px 4px rgba(87, 82, 82, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.leftSection {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 2rem;
+  margin-right: 2rem;
+}
+
+.nav {
+  display: flex;
+}
+
+.rightNav {
+  display: flex;
+}
+
+.link {
+  color: white;
+  margin-left: 1.5rem;
+  text-decoration: none;
+  font-weight: 500;
+}
