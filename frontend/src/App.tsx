@@ -6,9 +6,9 @@ import Services from './components/Services';
 
 const App: React.FC = () => {
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+    <div >
       <Header />
-      <main style={{ flex: 1, maxWidth: 1200, margin: '0 auto', width: '100%' }}>
+      <main style={{maxWidth: '1635px'}}>
         <Hero />
         <Services />
         {/* Add more sections here */}
