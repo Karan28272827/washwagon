@@ -5,9 +5,6 @@ const Footer = () => {
     <footer style={footerStyle}>
       <div style={containerStyle}>
         <p>© 2025 Laundry Booking. All rights reserved.</p>
-        <div>
-          <a href="mailto:support@laundrybooking.com" style={linkStyle}>Contact Support</a>
-        </div>
       </div>
     </footer>
   );
@@ -27,14 +24,8 @@ const containerStyle = {
   margin: '0 auto',
   padding: '0 1rem',
   display: 'flex',
-  justifyContent: 'space-between',
+  justifyContent: 'center',
   alignItems: 'center',
-};
-
-const linkStyle = {
-  color: '#555',
-  textDecoration: 'none',
-  fontWeight: '500',
 };
 
 export default Footer;
