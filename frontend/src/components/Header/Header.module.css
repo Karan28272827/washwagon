@@ -37,7 +37,7 @@
 
 .logo {
   font-weight: 700;
-  font-size: 2rem;
+  font-size: 2.5rem;
   margin-right: 2rem;
 }
 
@@ -53,6 +53,7 @@
   color: rgb(0, 0, 0);
   margin-left: 1.5rem;
   text-decoration: none;
+  font-size: 1.5rem;
   font-weight: 500;
 }
 

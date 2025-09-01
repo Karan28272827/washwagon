@@ -1,30 +1,34 @@
 .hero {
   background: #EBF2FE;
   color: #000000;
-  padding: 100px 20px;
+  padding: 100px 20px 80px 20px; /* Increased bottom padding for image */
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: left; /* Align text left for flex children */
-  /* To merge header background, use the same background as header */
-  /* If header uses a solid color, unify colors here if necessary */
-  /* For smooth effect, you can add transition/box-shadow on scroll in JS */
+  text-align: left;
+  min-height: 100vh; /* Ensure hero takes full viewport height */
 }
 
 .content {
-  max-width: 1200px; /* Increase max-width for side-by-side layout */
+  max-width: 1200px;
   width: 100%;
   display: flex;
-  justify-content: space-between; /* Title left, subtitle right */
+  flex-direction: column; /* Stack text section and image vertically */
+  gap: 60px; /* Space between text and image */
+}
+
+.textSection {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
   gap: 20px;
-  flex-wrap: wrap; /* Wrap on smaller screens */
+  flex-wrap: wrap;
 }
 
 .leftText {
   font-size: 3rem;
   font-weight: 700;
-  margin: 0; /* Remove margin for alignment */
+  margin: 0;
   flex: 1 1 45%;
   min-width: 280px;
 }
@@ -34,50 +38,71 @@
   min-width: 280px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Align to left on larger screens */
+  align-items: flex-start;
+}
+
+.imageSection {
+  width: 100%;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding: 0 40px; /* Proper margin alignment with text content */
+}
+
+.heroImage {
+  width: 100%;
+  max-width: 1200px; /* Limit maximum width */
+  height: auto;
+  border-radius: 20px; /* Rounded corners for modern look */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  object-fit: cover;
+  transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+.heroImage:hover {
+  transform: translateY(-5px); /* Slight lift on hover */
 }
 
 .title {
   font-size: 3rem;
   font-weight: 700;
-  margin: 0; /* Remove margin for alignment */
-  flex: 1 1 45%; /* Flex-grow and basis */
-  min-width: 280px; /* Min width to avoid too small */
+  margin: 0;
+  flex: 1 1 45%;
+  min-width: 280px;
 }
 
 .subtitle {
   font-size: 1.25rem;
-  margin: 0; /* Remove margin */
+  margin: 0;
   line-height: 1.5;
   flex: 1 1 45%;
   min-width: 280px;
-  color: rgba(10, 9, 9, 0.9); /* Slightly lighter */
+  color: rgba(10, 9, 9, 0.9);
 }
 
 .btnGroup {
   display: flex;
-  gap: 18px; /* space between buttons */
+  gap: 18px;
   width: 100%;
 }
 
-/* Button can move below on smaller screens */
 .btn {
-  background-color: transparent; /* Makes button background blend with hero bg */
-  color: #0f0f0f;                /* Dark text for contrast */
-  border: 2px solid #0f0f0f;    /* Border matching text color */
+  background-color: transparent;
+  color: #0f0f0f;
+  border: 2px solid #0f0f0f;
   padding: 15px 40px;
   font-size: 1.1rem;
   border-radius: 30px;
   cursor: pointer;
   font-weight: 600;
   margin-top: 20px;
-  transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transitions */
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .btn:hover {
-  background-color: #0f0f0f; /* Dark background on hover */
-  color: #fff;               /* White text on hover */
-  transform: scale(1.05);    /* Slight enlargement */
+  background-color: #0f0f0f;
+  color: #fff;
+  transform: scale(1.05);
 }
 
 /* Responsive adjustments */
@@ -85,18 +110,32 @@
 /* On small screens, stack all vertically */
 @media (max-width: 767px) {
   .hero {
-    padding: 60px 20px;
+    padding: 60px 20px 40px 20px;
+    min-height: auto; /* Allow natural height on mobile */
   }
 
   .content {
+    gap: 40px; /* Reduce gap on mobile */
+  }
+
+  .textSection {
     flex-direction: column;
     text-align: center;
   }
 
-  .title,
+  .leftText,
   .subtitle {
     flex: 1 1 100%;
     min-width: auto;
+  }
+
+  .imageSection {
+    padding: 0 20px; /* Reduce padding on mobile */
+  }
+
+  .heroImage {
+    max-width: 100%;
+    border-radius: 15px; /* Slightly smaller radius on mobile */
   }
 
   .btnGroup {
@@ -112,7 +151,7 @@
 
 /* On very small screens reduce font sizes */
 @media (max-width: 399px) {
-  .title {
+  .leftText {
     font-size: 2rem;
   }
 
@@ -123,5 +162,13 @@
   .btn {
     font-size: 1rem;
     padding: 12px 30px;
+  }
+
+  .content {
+    gap: 30px;
+  }
+
+  .heroImage {
+    border-radius: 12px;
   }
 }

@@ -2,6 +2,7 @@ import React from 'react';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import Hero from './components/Hero';
+import Process from './components/Process';
 import Services from './components/Services';
 
 const App: React.FC = () => {
@@ -10,6 +11,7 @@ const App: React.FC = () => {
       <Header />
       <main style={{width: '100%'}}>
         <Hero />
+        <Process />
         <Services />
         {/* Add more sections here */}
       </main>
