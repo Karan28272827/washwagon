@@ -18,8 +18,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'rest_framework',
-    'rest_framework.authtoken'
+    'rest_framework.authtoken',
+    'rest_framework_simplejwt',
     'dj_rest_auth',
+    'dj_rest_auth.registration',
     'corsheaders',
     'apps.api',
     'apps.common_models',
@@ -134,8 +136,9 @@ REST_AUTH = {
 }
 
 SITE_ID = 1
-ACCOUNT_LOGIN_METHODS = ['email']
-ACCOUNT_SIGNUP_FIELDS = ['email*', 'password1*', 'password2*']
-ACCOUNT_USER_MODEL_USERNAME_FIELD = None  
-ACCOUNT_EMAIL_VERIFICATION = 'mandatory' 
-LOGIN_REDIRECT_URL = '/api/users/me/'
+ACCOUNT_AUTHENTICATION_METHOD = "email"
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_EMAIL_VERIFICATION = "mandatory"
+ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = True
+

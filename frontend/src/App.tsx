@@ -4,6 +4,7 @@ import Footer from './components/Footer/Footer';
 import Hero from './components/Hero';
 import Process from './components/Process';
 import Services from './components/Services';
+import GoogleLoginButton from './components/GoogleLoginButton';
 
 const App: React.FC = () => {
   return (
@@ -14,6 +15,7 @@ const App: React.FC = () => {
         <Process />
         <Services />
         {/* Add more sections here */}
+        <GoogleLoginButton />
       </main>
       <Footer />
     </div>

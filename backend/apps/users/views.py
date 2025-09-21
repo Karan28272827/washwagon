@@ -37,5 +37,5 @@ class GoogleLoginView(SocialLoginView):
 # The frontend needs to send a post request with the authorization code received from google to /api/users/auth/google endpoint. 
 # From there the backend will send the refresh and jwt token to the frontend.
     adapter_class = GoogleOAuth2Adapter
-    callback_url = "insert frontend url here"
+    callback_url = "http://localhost:3000"
     client_class = OAuth2Client
